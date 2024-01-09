@@ -4,10 +4,17 @@ body {
   line-height: 1.4;
   background-color: gray;
 }
+main{
+  overflow-y: scroll;
+}
+.page1{
+  height:100vh;
+}
 .hero{
-width: 100vh;
+width: 40vh;
 height:100px;
 margin-left:170px;
+margin-top: 25px;
 rotate: 90deg;
 transform-origin: top left;
 position: fixed;
@@ -15,14 +22,29 @@ top:0;
 font-size: 50px;
 color:black;
 }
+.sample-work{
+opacity:0.3;
+position: fixed;
+left:-300px;
+pointer-events: none;
+transition: all 800ms;
+}
+.hero:has(h1:hover) ~ .sample-work,
+.sample-work:hover{
+opacity:1;
+transform:translateX(400px);
+pointer-events: all;
+}
 .info{
   position:fixed;
   bottom:50px;
   right:50px;
 }
-
-
+.page2{
+  height:100vh;
+}
 .ad {
+  visibility: hidden;
   border: 1px solid;
   padding: 1em;
   position: absolute;

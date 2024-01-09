@@ -13,5 +13,7 @@ window.onclick = function(event) {
     .querySelector(".modal")
     .classList.remove("active");
   }
-
+}
+querySelector.(".sample-work").onclick = function(event){
+  event.target.querySelector(".page2").scrollIntoView();
 }
