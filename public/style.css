@@ -1,8 +1,14 @@
-body {
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+  :root{
+    --font: 'Roboto Mono';
+  }
+  body {
   /* Change to something you like, but please do customize the font! */
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: var(--font);
   line-height: 1.4;
   background-color: gray;
+  margin: 0;
 }
 main{
   overflow-y: scroll;
@@ -17,17 +23,24 @@ margin-left:170px;
 margin-top: 25px;
 rotate: 90deg;
 transform-origin: top left;
-position: fixed;
+position: absolute;
 top:0;
 font-size: 50px;
 color:black;
 }
 .sample-work{
 opacity:0.3;
-position: fixed;
+color:white;
+position: absolute;
 left:-300px;
+top:30px;
 pointer-events: none;
 transition: all 800ms;
+}
+.sample-work a{
+  color:white;
+  text-decoration: none;
+  font-size:22px;
 }
 .hero:has(h1:hover) ~ .sample-work,
 .sample-work:hover{
@@ -36,12 +49,52 @@ transform:translateX(400px);
 pointer-events: all;
 }
 .info{
-  position:fixed;
+  position:absolute;
   bottom:50px;
   right:50px;
 }
 .page2{
   height:100vh;
+  background-image:url('impressionsunrise.jpg');
+  background-size: 100vw 100vh;
+}
+.projects{
+  margin:auto;
+  width:50%;
+  text-align: center;
+  color:white;
+  font-size:50px;
+}
+#project{
+  color:black;
+  font-size:10px;
+  text-shadow:1px 0 0;
+  text-decoration:none;
+}
+#project div{
+  opacity:0.5;
+  width:300px;
+  height:200px;
+  padding:10vh;
+  background-repeat:no-repeat;
+  background-size: contain;
+  text-align: center;
+}
+#project div:hover{
+  opacity: 1;
+}
+.cyoa{
+  background-image:url('pkmn.png');
+  margin-right:10vw;
+}
+.zengarden{
+  background-image: url('zengarden.jpeg');
+  color:white;
+  margin-left:10vw;
+}
+.imitation{
+  background-image:url('polandspring.jpg');
+  margin:auto;
 }
 .ad {
   visibility: hidden;

@@ -7,13 +7,38 @@ for (let button of document.querySelectorAll(".ad .trigger")) {
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target.classList.contains("ad")) {
-    event.target
-    .querySelector(".modal")
-    .classList.remove("active");
+    event.target.querySelector(".modal").classList.remove("active");
   }
+};
+for (let a of document.querySelectorAll(".sample-work a")) {
+  a.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    // Get selector from HREF which will be a hash URL
+    const href = a.getAttribute("href");
+
+    // Select the element
+    const targetElement = document.querySelector(".page2");
+
+    // Scroll smoothly into view
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  });
 }
-querySelector.(".sample-work").onclick = function(event){
-  event.target.querySelector(".page2").scrollIntoView();
-}
+
+var images = ["impressionsunrise.jpg", "waterlillies.jpg", "nightcafe.jpg"];
+var index = 0;
+var scrollEl = document.querySelector("#scroll");
+
+// On a timer...
+setInterval(function () {
+  // what we do on repeat...
+  index += 1;
+  if (index === images.length) index = 0; 
+  scrollEl.style.backgroundImage = `url('${images[index]}')`;      
+}, 
+6000 // every x milliseconds
+);
