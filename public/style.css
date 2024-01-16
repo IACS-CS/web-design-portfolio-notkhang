@@ -65,6 +65,10 @@ pointer-events: all;
   color:white;
   font-size:50px;
 }
+.project_layout{
+  display: flex;
+  justify-content: center;
+}
 #project{
   color:black;
   font-size:10px;
@@ -72,29 +76,31 @@ pointer-events: all;
   text-decoration:none;
 }
 #project div{
-  opacity:0.5;
+  opacity:0.25;
   width:300px;
   height:200px;
-  padding:10vh;
+  margin:10vh;
   background-repeat:no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   text-align: center;
+  border:black solid;
 }
 #project div:hover{
   opacity: 1;
 }
 .cyoa{
   background-image:url('pkmn.png');
-  margin-right:10vw;
 }
 .zengarden{
   background-image: url('zengarden.jpeg');
   color:white;
-  margin-left:10vw;
 }
 .imitation{
   background-image:url('polandspring.jpg');
-  margin:auto;
+}
+.imitation span{
+  background-color:white;
 }
 .ad {
   visibility: hidden;
@@ -113,4 +119,13 @@ pointer-events: all;
 }
 .ad .modal.active {
   display: block;
+}
+@media screen and (max-width: 968px) {
+  .project_layout{
+    display:block;
+    margin:auto;
+  }
+  #project div{
+    height:150px;
+  }
 }
